@@ -93,10 +93,9 @@ namespace laba_1
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //Определить­, превосходи­т ли первый элемент массива из десяти чисел среднее значение элементов этого массива.
+            //Дан массив из 10 чисел. Определить­ сколько раз меняется знак у его элементов.
 
             ArrayList myAL = new ArrayList();
-            int bigers = -1; //количество элементов больше своих соседей 
 
             int index;
             int itemcount = Convert.ToInt32(elements_tb.Text);
@@ -114,23 +113,16 @@ namespace laba_1
             int somenumber = Convert.ToInt32(myAL[0]);//сравниваемое число
             int sum = 0;
 
-             for (int i = 0; i < itemcount; i++)
+             for (int i = 1; i < itemcount; i++)
              {
-                 sum = sum + Convert.ToInt32(myAL[i]);//сравниваемое число
+                 if ((Convert.ToInt32(myAL[i]) > 0 && somenumber < 0)||((Convert.ToInt32(myAL[i]) < 0 && somenumber > 0)))
+                     sum++;
+                 somenumber = Convert.ToInt32(myAL[i]);
+
              }
 
-             if (somenumber > sum/itemcount)
-                 {
-                     mass_lb.Items.Add("первый элемент массива из десяти чисел превосходит среднее значение элементов этого массива");
-                     mass_lb.Items.Add(somenumber);
-                     mass_lb.Items.Add(sum / itemcount);
-             }
-             else
-             {
-                 mass_lb.Items.Add("первый элемент массива из десяти чисел не превосходит среднее значение элементов этого массива");
-                 mass_lb.Items.Add(somenumber);
-                 mass_lb.Items.Add(sum / itemcount);           
-             }
+                     mass_lb.Items.Add("Знаки поменялись раз");
+                     mass_lb.Items.Add(sum);
         }
 
         /*  private void Window_KeyUp(object sender, KeyEventArgs e)
