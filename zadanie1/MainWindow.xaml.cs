@@ -93,11 +93,10 @@ namespace laba_1
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //Для массива из n чисел найти номер первого элемента, большего 25.
+            // В массиве из n чисел найти сумму элементов больших, чем   второй элемент этого массива.
 
             ArrayList myAL = new ArrayList();
-            int bigers = -1; //количество элементов больше своих соседей 
-
+            int sum = 0; //сумма элементов больщих чем второй 
             int index;
             int itemcount = Convert.ToInt32(elements_tb.Text);
             Random rn = new Random();
@@ -111,21 +110,18 @@ namespace laba_1
                 mass_lb.Items.Add(number);
             }
 
+            int somenumber = Convert.ToInt32(myAL[1]);// второй элемент массива
             for (int i = 0; i < itemcount; i++)
             {
-                int somenumber = Convert.ToInt32(myAL[i]);//сравниваемое число
+                int cheker = Convert.ToInt32(myAL[i]);//сравниваемое число
 
-                if (somenumber > 25)
+                if (cheker > somenumber)
                 {
-                    bigers = i;
-                    mass_lb.Items.Add("номер первого элемента, большего 25");
-                    mass_lb.Items.Add(bigers);
-                    break;
+                    sum = sum + cheker;
                 }
-
             }
-            if (bigers == -1)
-                mass_lb.Items.Add("элементов > 25 в массиве нет");
+            mass_lb.Items.Add("сумма элементов больших, чем   второй элемент этого массива.");
+            mass_lb.Items.Add(sum);
         }
 
         /*  private void Window_KeyUp(object sender, KeyEventArgs e)
