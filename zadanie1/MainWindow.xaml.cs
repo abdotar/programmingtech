@@ -93,11 +93,11 @@ namespace laba_1
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            /* Сколько элементов массива больше своих «соседей»,­ т.е. предыдущег­о и последующе­го.
-             Первый и последний элементы не рассматрив­ать.*/
+            //Для массива из n чисел найти номер первого элемента, большего 25.
 
             ArrayList myAL = new ArrayList();
-            int bigers = 0; //количество элементов больше своих соседей 
+            int bigers = -1; //количество элементов больше своих соседей 
+
             int index;
             int itemcount = Convert.ToInt32(elements_tb.Text);
             Random rn = new Random();
@@ -111,17 +111,21 @@ namespace laba_1
                 mass_lb.Items.Add(number);
             }
 
-            for (int i = 1; i < itemcount - 1; i++)
+            for (int i = 0; i < itemcount; i++)
             {
                 int somenumber = Convert.ToInt32(myAL[i]);//сравниваемое число
 
-                if (somenumber > Convert.ToInt32(myAL[i + 1]) && somenumber > Convert.ToInt32(myAL[i - 1]))
+                if (somenumber > 25)
                 {
-                    bigers++;
+                    bigers = i;
+                    mass_lb.Items.Add("номер первого элемента, большего 25");
+                    mass_lb.Items.Add(bigers);
+                    break;
                 }
+
             }
-            mass_lb.Items.Add("Количество элементов массива больше своих «соседей» ");
-            mass_lb.Items.Add(bigers);
+            if (bigers == -1)
+                mass_lb.Items.Add("элементов > 25 в массиве нет");
         }
 
         /*  private void Window_KeyUp(object sender, KeyEventArgs e)
