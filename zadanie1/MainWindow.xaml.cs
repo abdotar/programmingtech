@@ -93,10 +93,10 @@ namespace laba_1
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            // В массиве из n чисел найти сумму элементов больших, чем   второй элемент этого массива.
+            // Найти, сколько   элементов массива из 10 чисел больше, чем   четвертый элемент этого массива.
 
             ArrayList myAL = new ArrayList();
-            int sum = 0; //сумма элементов больщих чем второй 
+            int sum = 0; //кол - во элементов больщих чем четвертый
             int index;
             int itemcount = Convert.ToInt32(elements_tb.Text);
             Random rn = new Random();
@@ -110,17 +110,17 @@ namespace laba_1
                 mass_lb.Items.Add(number);
             }
 
-            int somenumber = Convert.ToInt32(myAL[1]);// второй элемент массива
+            int somenumber = Convert.ToInt32(myAL[3]);// четвертый элемент массива
             for (int i = 0; i < itemcount; i++)
             {
                 int cheker = Convert.ToInt32(myAL[i]);//сравниваемое число
 
                 if (cheker > somenumber)
                 {
-                    sum = sum + cheker;
+                    sum++;
                 }
             }
-            mass_lb.Items.Add("сумма элементов больших, чем   второй элемент этого массива.");
+            mass_lb.Items.Add("кол-во элементов больших, чем четвертый элемент этого массива.");
             mass_lb.Items.Add(sum);
         }
 
