@@ -93,10 +93,9 @@ namespace laba_1
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //Найти сумму элементов массива из 10 чисел, меньших, чем 21..
+            //Дан массив из 10 чисел. Увеличить на единицу значения всех элементов кратных 5.
 
             ArrayList myAL = new ArrayList();
-            int sum = 0; //кол - во элементов меньших, чем 21
             int index;
             int itemcount = Convert.ToInt32(elements_tb.Text);
             Random rn = new Random();
@@ -109,18 +108,20 @@ namespace laba_1
                 myAL.Add(number);
                 mass_lb.Items.Add(number);
             }
+            mass_lb.Items.Add("результат выполнения алгоритма увеличиения на единицу значения всех элементов кратных 5.");
 
             for (int i = 0; i < itemcount; i++)
             {
                 int cheker = Convert.ToInt32(myAL[i]);//сравниваемое число
 
-                if (cheker < 21)
+                if (cheker % 5 == 0)
                 {
-                    sum++;
+                    mass_lb.Items.Add(Convert.ToInt32(myAL[i]) + 1);
                 }
+                else
+                    mass_lb.Items.Add(Convert.ToInt32(myAL[i]));
+
             }
-            mass_lb.Items.Add("кол-во элементов  меньших, чем 21.");
-            mass_lb.Items.Add(sum);
         }
 
         /*  private void Window_KeyUp(object sender, KeyEventArgs e)
