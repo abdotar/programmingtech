@@ -16,7 +16,7 @@
         <Button Content="Выход" HorizontalAlignment="Left" Margin="23,288,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.ColumnSpan="2"/>
         <ListBox Name="mass_lb" HorizontalAlignment="Left" Height="255" Margin="52,41,0,0" VerticalAlignment="Top" Width="323" Grid.Column="2"/>
         <Label Content="Результат" HorizontalAlignment="Left" Margin="173,10,0,0" VerticalAlignment="Top" Width="139" Grid.Column="2"/>
-        <Button Content=" Задание 2" HorizontalAlignment="Left" Margin="23,150,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4" Grid.ColumnSpan="2"/>
+        <Button Content=" Задание 4" HorizontalAlignment="Left" Margin="23,150,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

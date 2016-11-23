@@ -93,7 +93,7 @@ namespace laba_1
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //Для массива из n чисел найти номер первого элемента, большего 25.
+            //Определить­, превосходи­т ли первый элемент массива из десяти чисел среднее значение элементов этого массива.
 
             ArrayList myAL = new ArrayList();
             int bigers = -1; //количество элементов больше своих соседей 
@@ -111,21 +111,26 @@ namespace laba_1
                 mass_lb.Items.Add(number);
             }
 
-            for (int i = 0; i < itemcount; i++)
-            {
-                int somenumber = Convert.ToInt32(myAL[i]);//сравниваемое число
+            int somenumber = Convert.ToInt32(myAL[0]);//сравниваемое число
+            int sum = 0;
 
-                if (somenumber > 25)
-                {
-                    bigers = i;
-                    mass_lb.Items.Add("номер первого элемента, большего 25");
-                    mass_lb.Items.Add(bigers);
-                    break;
-                }
+             for (int i = 0; i < itemcount; i++)
+             {
+                 sum = sum + Convert.ToInt32(myAL[i]);//сравниваемое число
+             }
 
-            }
-            if (bigers == -1)
-                mass_lb.Items.Add("элементов > 25 в массиве нет");
+             if (somenumber > sum/itemcount)
+                 {
+                     mass_lb.Items.Add("первый элемент массива из десяти чисел превосходит среднее значение элементов этого массива");
+                     mass_lb.Items.Add(somenumber);
+                     mass_lb.Items.Add(sum / itemcount);
+             }
+             else
+             {
+                 mass_lb.Items.Add("первый элемент массива из десяти чисел не превосходит среднее значение элементов этого массива");
+                 mass_lb.Items.Add(somenumber);
+                 mass_lb.Items.Add(sum / itemcount);           
+             }
         }
 
         /*  private void Window_KeyUp(object sender, KeyEventArgs e)
