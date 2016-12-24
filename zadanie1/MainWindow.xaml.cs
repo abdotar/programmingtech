@@ -93,7 +93,7 @@ namespace laba_1
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //Дан массив из 10 чисел. Увеличить на единицу значения всех элементов кратных 5.
+            //Для массива из 10 целых чисел подчитать сумму элементов,­ значения которых не кратны 3.
 
             ArrayList myAL = new ArrayList();
             int index;
@@ -108,28 +108,31 @@ namespace laba_1
                 myAL.Add(number);
                 mass_lb.Items.Add(number);
             }
-            mass_lb.Items.Add("результат выполнения алгоритма увеличиения на единицу значения всех элементов кратных 5.");
+            mass_lb.Items.Add("результат выполнения алгоритма подсчета суммы элементов,­ значения которых не кратны 3.");
 
             for (int i = 0; i < itemcount; i++)
             {
                 int cheker = Convert.ToInt32(myAL[i]);//сравниваемое число
+                int sum=0;
 
-                if (cheker % 5 == 0)
+                if (cheker % 3 != 0)
                 {
-                    mass_lb.Items.Add(Convert.ToInt32(myAL[i]) + 1);
+                   sum=sum+Convert.ToInt32(myAL[i]);
                 }
-                else
-                    mass_lb.Items.Add(Convert.ToInt32(myAL[i]));
 
             }
         }
 
-        /*  private void Window_KeyUp(object sender, KeyEventArgs e)
-          {
-              if( e.KeyCode == Keys.F1 )
-              {
-                  //show abouts
-              }
-          }*/
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                AboutBox1 F = new AboutBox1();
+                F.ShowDialog();
+
+            }
+        }
+
     }
 }
