@@ -93,34 +93,39 @@ namespace laba_1
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //Найти сумму элементов массива из 10 чисел, меньших, чем 21..
+            //Отобразить массив виде гистораммы
 
             ArrayList myAL = new ArrayList();
             int sum = 0; //кол - во элементов меньших, чем 21
             int index;
             int itemcount = Convert.ToInt32(elements_tb.Text);
             Random rn = new Random();
-            int number;
+            int number,nn1=10;
             mass_lb.Items.Clear();
             mass_lb.Items.Add("массив");
+            ArrayList myAl2 = new ArrayList();
             for (index = 1; index <= itemcount; index++)
             {
+                myAl2.Add(nn1);
                 number = -100 + rn.Next(200);
                 myAL.Add(number);
                 mass_lb.Items.Add(number);
+
             }
 
-            for (int i = 0; i < itemcount; i++)
+            zadanie1.Form1 f1 = new zadanie1.Form1();
+            int[] masive = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };  
+            f1.creation(myAL, masive);
+            f1.ShowDialog();
+
+        }
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
             {
-                int cheker = Convert.ToInt32(myAL[i]);//сравниваемое число
-
-                if (cheker < 21)
-                {
-                    sum++;
-                }
+                zadanie1.AboutBox1 F = new zadanie1.AboutBox1();
+                F.ShowDialog();
             }
-            mass_lb.Items.Add("кол-во элементов  меньших, чем 21.");
-            mass_lb.Items.Add(sum);
         }
 
         /*  private void Window_KeyUp(object sender, KeyEventArgs e)
