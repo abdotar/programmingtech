@@ -102,33 +102,36 @@ namespace laba_1
             int number;
             mass_lb.Items.Clear();
             mass_lb.Items.Add("массив");
+            int sum = 0;
             for (index = 1; index <= itemcount; index++)
             {
                 number = -100 + rn.Next(200);
                 myAL.Add(number);
                 mass_lb.Items.Add(number);
             }
-            mass_lb.Items.Add("результат выполнения алгоритма подсчета суммы элементов,­ значения которых не кратны 3.");
+            
 
             for (int i = 0; i < itemcount; i++)
             {
                 int cheker = Convert.ToInt32(myAL[i]);//сравниваемое число
-                int sum=0;
+
 
                 if (cheker % 3 != 0)
                 {
                    sum=sum+Convert.ToInt32(myAL[i]);
                 }
-
+            
             }
+            mass_lb.Items.Add("результат выполнения алгоритма подсчета суммы элементов,­ значения которых не кратны 3.=" + Convert.ToString(sum));
+
         }
 
 
-        private void Window_KeyUp(object sender, KeyEventArgs e)
+        public  void Window_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.F1)
             {
-                AboutBox1 F = new AboutBox1();
+                zadanie1.AboutBox1 F = new zadanie1.AboutBox1();
                 F.ShowDialog();
 
             }
