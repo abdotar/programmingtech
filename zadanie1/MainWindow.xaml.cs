@@ -93,7 +93,7 @@ namespace laba_1
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //Дан массив из 10 чисел. Подсчитать­ количество­ не нулевых элементов массива.
+            //Найти сумму элементов массива из 10 чисел, меньших, чем 5-й элемент этого массива.
 
             ArrayList myAL = new ArrayList();
             int index;
@@ -116,13 +116,13 @@ namespace laba_1
                 int cheker = Convert.ToInt32(myAL[i]);//сравниваемое число
 
 
-                if (cheker != 0)
+                if (cheker < Convert.ToInt32(myAL[4]))
                 {
-                   sum++;
+                   sum= sum + cheker;
                 }
             
             }
-            mass_lb.Items.Add("количество­ не нулевых элементов массива=" + Convert.ToString(sum));
+            mass_lb.Items.Add("Сумма элементов массива меньше чем 5-ый элемент=" + Convert.ToString(sum));
 
         }
 
