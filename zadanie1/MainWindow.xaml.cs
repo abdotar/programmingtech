@@ -93,44 +93,51 @@ namespace laba_1
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //Дан массив из 10 чисел. Определить­ сколько раз меняется знак у его элементов.
+            //Дан массив из 10 чисел. Подсчитать­ количество­ не отрицатель­ных элементов массива.
 
             ArrayList myAL = new ArrayList();
-
             int index;
             int itemcount = Convert.ToInt32(elements_tb.Text);
             Random rn = new Random();
             int number;
             mass_lb.Items.Clear();
             mass_lb.Items.Add("массив");
+            int sum = 0;
             for (index = 1; index <= itemcount; index++)
             {
                 number = -100 + rn.Next(200);
                 myAL.Add(number);
                 mass_lb.Items.Add(number);
             }
+            
 
-            int somenumber = Convert.ToInt32(myAL[0]);//сравниваемое число
-            int sum = 0;
+            for (int i = 0; i < itemcount; i++)
+            {
+                int cheker = Convert.ToInt32(myAL[i]);//сравниваемое число
 
-             for (int i = 1; i < itemcount; i++)
-             {
-                 if ((Convert.ToInt32(myAL[i]) > 0 && somenumber < 0)||((Convert.ToInt32(myAL[i]) < 0 && somenumber > 0)))
-                     sum++;
-                 somenumber = Convert.ToInt32(myAL[i]);
 
-             }
+                if (cheker > 0)
+                {
+                   sum=sum+Convert.ToInt32(myAL[i]);
+                }
+            
+            }
+            mass_lb.Items.Add("результат выполнения алгоритма подсчета количества не отрицатель­ных элементов массива=" + Convert.ToString(sum));
 
-                     mass_lb.Items.Add("Знаки поменялись раз");
-                     mass_lb.Items.Add(sum);
         }
 
-        /*  private void Window_KeyUp(object sender, KeyEventArgs e)
-          {
-              if( e.KeyCode == Keys.F1 )
-              {
-                  //show abouts
-              }
-          }*/
+
+
+        private void Window_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                zadanie1.AboutBox1 F = new zadanie1.AboutBox1();
+                F.ShowDialog();
+
+            }
+
+        }
+
     }
 }

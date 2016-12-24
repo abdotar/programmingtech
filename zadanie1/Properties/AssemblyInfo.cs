@@ -8,11 +8,11 @@ using System.Windows;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("zadanie1")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("abdotar1@mail.ru")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("zadanie1")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2016")]
+[assembly: AssemblyCopyright("created by Tarrab A.O.R")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
