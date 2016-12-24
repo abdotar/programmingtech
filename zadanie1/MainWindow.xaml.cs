@@ -93,7 +93,7 @@ namespace laba_1
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //Дан массив из 10 разных чисел. Найти элемент, меньше всего отличающий­ся от второго. Указание: функция абсолютной­ величины – ABS..
+            //В массиве из 10 целых чисел подсчитать­ количество­ элементов,­ кратных 3..
 
             ArrayList myAL = new ArrayList();
             int index;
@@ -110,25 +110,17 @@ namespace laba_1
                 myAL.Add(number);
                 mass_lb.Items.Add(number);
             }
-            int second = Convert.ToInt32(myAL[1]);
-            int smallest=Convert.ToInt32(myAL[0]);
-            int result = Math.Abs(Convert.ToInt32(myAL[0]) - Convert.ToInt32(myAL[1]));
-            int newresult;
+            int sum = 0;
             for (int i = 0; i < itemcount; i++)
             {
                 int cheker = Convert.ToInt32(myAL[i]);//сравниваемое число
-                if(i!=1)
+                if(cheker % 3==0)
                 {
-                    newresult=Math.Abs(cheker - second);
-                    if(newresult<result)
-                    {
-                        result = newresult;
-                        smallest = cheker;
-                    }
+                    sum++;
                 }
 
             }
-            mass_lb.Items.Add("результат: элемент, меньше всего отличающий­ся от второго=" + Convert.ToString(smallest));
+            mass_lb.Items.Add("количество­ элементов,­ кратных 3.=" + sum);
 
         }
 
