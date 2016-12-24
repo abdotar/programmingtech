@@ -93,7 +93,7 @@ namespace laba_1
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //Дан массив из 10 чисел. Подсчитать­ количество­ не отрицатель­ных элементов массива.
+            //Дан массив из 10 чисел. Подсчитать­ количество­ не нулевых элементов массива.
 
             ArrayList myAL = new ArrayList();
             int index;
@@ -116,13 +116,13 @@ namespace laba_1
                 int cheker = Convert.ToInt32(myAL[i]);//сравниваемое число
 
 
-                if (cheker > 0)
+                if (cheker != 0)
                 {
-                   sum=sum+Convert.ToInt32(myAL[i]);
+                   sum++;
                 }
             
             }
-            mass_lb.Items.Add("результат выполнения алгоритма подсчета количества не отрицатель­ных элементов массива=" + Convert.ToString(sum));
+            mass_lb.Items.Add("количество­ не нулевых элементов массива=" + Convert.ToString(sum));
 
         }
 
