@@ -93,36 +93,42 @@ namespace laba_1
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //Для массива из 10 целых чисел подчитать сумму элементов,­ значения которых не кратны 3.
+            //Дан массив из 10 разных чисел. Найти элемент, меньше всего отличающий­ся от второго. Указание: функция абсолютной­ величины – ABS..
 
             ArrayList myAL = new ArrayList();
             int index;
             int itemcount = Convert.ToInt32(elements_tb.Text);
             Random rn = new Random();
             int number;
+            
             mass_lb.Items.Clear();
             mass_lb.Items.Add("массив");
-            int sum = 0;
+
             for (index = 1; index <= itemcount; index++)
             {
                 number = -100 + rn.Next(200);
                 myAL.Add(number);
                 mass_lb.Items.Add(number);
             }
-            
-
+            int second = Convert.ToInt32(myAL[1]);
+            int smallest=Convert.ToInt32(myAL[0]);
+            int result = Math.Abs(Convert.ToInt32(myAL[0]) - Convert.ToInt32(myAL[1]));
+            int newresult;
             for (int i = 0; i < itemcount; i++)
             {
                 int cheker = Convert.ToInt32(myAL[i]);//сравниваемое число
-
-
-                if (cheker % 3 != 0)
+                if(i!=1)
                 {
-                   sum=sum+Convert.ToInt32(myAL[i]);
+                    newresult=Math.Abs(cheker - second);
+                    if(newresult<result)
+                    {
+                        result = newresult;
+                        smallest = cheker;
+                    }
                 }
-            
+
             }
-            mass_lb.Items.Add("результат выполнения алгоритма подсчета суммы элементов,­ значения которых не кратны 3.=" + Convert.ToString(sum));
+            mass_lb.Items.Add("результат: элемент, меньше всего отличающий­ся от второго=" + Convert.ToString(smallest));
 
         }
 
